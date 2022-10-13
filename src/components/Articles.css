@@ -1,0 +1,28 @@
+.article-section {
+    margin-top: 110px;
+    margin-bottom: 160px;
+}
+
+.article-section h1 {
+    font-family: 'GraphikBold';
+    font-size: 2.25rem;
+    color: var(--primary-color);
+    margin-bottom: 58px;
+}
+
+ .more-articles {
+    text-align: center;
+}
+
+.more-articles button {
+    text-align: center;
+    padding-inline: 20px;
+    padding-block: 10px;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    font-family: 'GraphikMedium';
+    color: var(--primary-color);
+    background-color: var(--secondary-color);
+    outline: none;
+    border: none;
+}
