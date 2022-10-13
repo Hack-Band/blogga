@@ -6,7 +6,6 @@ function App() {
   return (
     <main>
       <HeroSection />
-      <p className='font-bold'>Hello World</p>
     </main>
   );
 }
