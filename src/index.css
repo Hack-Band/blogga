@@ -1,13 +1,92 @@
-body {
+/* CSS RESETS */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* MARGIN RESET */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+figure,
+picture {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+  font-weight: 400;
+}
+
+/* IMAGE SETUP */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+  background-repeat: no-repeat;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* FORM SETUP */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* REMOVE ANIMATION FOR THOSE WHO HAVE IT TURNED OFF */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* CSS RESETS */
+
+@font-face {
+  font-family: 'GraphikBold';
+  src: local("Graphik"), url('../src/fonts/GraphikBold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'GraphikRegular';
+  src: local("Graphik"), url('../src/fonts/GraphikRegular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'GraphikMedium';
+  src: local("Graphik"), url('../src/fonts/GraphikMedium.woff') format('woff');
+  font-weight: 500;
+}
+
+
+
+
+main {
+  font-family: 'GraphikRegular';
+  color: red;
 }
