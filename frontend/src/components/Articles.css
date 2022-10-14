@@ -26,3 +26,9 @@
     outline: none;
     border: none;
 }
+
+@media (max-width: 480px) {
+    .article-section h1 {
+        font-size: 2rem;
+    }
+}

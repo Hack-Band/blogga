@@ -23,3 +23,9 @@ nav {
 .sub-btn:hover {
     background-color: rgba(255, 255, 255, 0.300);
 }
+
+@media (max-width: 480px) {
+    nav {
+        padding-inline: 20px;
+    }
+}

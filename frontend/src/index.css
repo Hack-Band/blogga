@@ -113,3 +113,10 @@ button {
   font-family: 'GraphikRegular';
   cursor: pointer;
 }
+
+@media (max-width: 480px) {
+  .content-margin {
+    max-width: 90%;
+    margin-inline: auto;
+  }
+}

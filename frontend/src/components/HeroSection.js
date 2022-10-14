@@ -1,6 +1,7 @@
 import React from "react";
 import Nav from "./Nav";
 import Greet from "./Greet";
+// import BlogInfo from './BlogInfo'
 import "./HeroSection.css";
 
 const HeroSection = () => {
@@ -9,8 +10,9 @@ const HeroSection = () => {
       <Nav />
       <div className="hero-content content-margin">
         <Greet />
+       
 
-        <p>Insights about my personal and work life, and the in-betweens</p>
+        <p className='blog-title'>Insights about my personal and work life, and the in-betweens</p>
       </div>
     </section>
   );

@@ -1,7 +1,13 @@
 .welcome {
-    font-family: 'GraphikMedium';
+  font-family: "GraphikMedium";
 }
 
 .welcome div {
-    margin-right: 5px;
+  margin-right: 5px;
+}
+
+@media (max-width: 480px) {
+  .welcome {
+    justify-content: center;
+  }
 }

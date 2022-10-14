@@ -43,3 +43,22 @@
     height: 210px;
     border-radius: 8px;
 }
+
+@media (max-width: 480px) {
+    .blog-post-image {
+        margin-bottom: 20px;
+    }
+
+    .blog-post-content h3 {
+        font-size: 1.125rem;
+    }
+    
+    .blog-post-content p {
+        font-size: 1rem;
+    }
+
+    .blog-post {
+       flex-direction: column-reverse;
+       align-items: flex-start;
+    }
+}
