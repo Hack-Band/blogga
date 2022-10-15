@@ -1,17 +1,21 @@
 import "./BlogInfo.css";
-import caret from "../assets/caret.svg";
 
 const BlogInfo = () => {
+  let url = window.location.href;
+
+  //checks if user is on blog page and updates the blog slug
+  function getUrl(url) {
+    if (url.includes("/blog")) {
+      return <span>ARTICLES</span>;
+    } else {
+      return <span>FEATURED POST</span>;
+    }
+  }
+
   return (
     <div className="blog-info flex">
-      <div className="back-btn">
-        <img src={caret} alt="back button" />
-      </div>
-
       <div className="blog-date">
-        <div>
-          <span>ARTICLES</span>
-        </div>
+        <div>{getUrl(url)}</div>
         <div>
           <span>AUGUST 13, 2021 </span>
         </div>
