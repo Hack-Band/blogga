@@ -23,11 +23,16 @@ BASE_DIR = os.path.dirname(PROJECT_DIR)
 
 # Application definition
 
-INSTALLED_APPS = [
-    "home",
-    "search",
+LOCAL_APPS = [
+    "blogga.core",
+    "blogga.blog",
+    "blogga.users",
+]
+
+THIRD_PARTY_APPS = [
     "wagtail.contrib.forms",
     "wagtail.contrib.redirects",
+    "wagtail.contrib.modeladmin",
     "wagtail.embeds",
     "wagtail.sites",
     "wagtail.users",
@@ -37,8 +42,13 @@ INSTALLED_APPS = [
     "wagtail.search",
     "wagtail.admin",
     "wagtail",
+    "wagtail.api.v2",
     "modelcluster",
     "taggit",
+    "rest_framework",
+]
+
+DJANGO_APPS = [
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -46,6 +56,8 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
 ]
+
+INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
 MIDDLEWARE = [
     "django.contrib.sessions.middleware.SessionMiddleware",
@@ -58,7 +70,7 @@ MIDDLEWARE = [
     "wagtail.contrib.redirects.middleware.RedirectMiddleware",
 ]
 
-ROOT_URLCONF = "blogga.urls"
+ROOT_URLCONF = "config.urls"
 
 TEMPLATES = [
     {
@@ -78,7 +90,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = "blogga.wsgi.application"
+WSGI_APPLICATION = "config.wsgi.application"
 
 
 # Database
@@ -164,3 +176,8 @@ WAGTAILSEARCH_BACKENDS = {
 # Base URL to use when referring to full URLs within the Wagtail admin backend -
 # e.g. in notification emails. Don't include '/admin' or a trailing slash
 WAGTAILADMIN_BASE_URL = "http://example.com"
+
+# DEFAULT_FILE_STORAGE = "storages.backends.azure_storage.AzureStorage"
+# STATICFILES_STORAGE = "storages.backends.azure_storage.AzureStorage"
+
+AUTH_USER_MODEL = "blogga_user.BloggaUser"
