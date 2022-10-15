@@ -11,7 +11,6 @@ const HeroSection = () => {
       <div className="hero-content content-margin">
         <Greet />
        
-
         <p className='blog-title'>Insights about my personal and work life, and the in-betweens</p>
       </div>
     </section>
