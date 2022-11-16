@@ -17,6 +17,9 @@ func Init() {
 	// Test endpoint
 	router.GET("/hello", hello)
 
+	// register routes
+	registerHandlers(router)
+
 	// 404 handler
 	router.NoRoute(notFound)
 
