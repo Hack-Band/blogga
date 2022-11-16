@@ -1,14 +1,18 @@
 package config
 
 import (
+	"fmt"
 	"log"
+	"os"
 
-	"github.com/fsnotify/fsnotify"
-	"github.com/spf13/viper"
+	"gorm.io/driver/postgres"
+	"gorm.io/gorm"
 )
 
 // Handle all configuration data
-type Config struct{}
+type Config struct {
+	Postgres *gorm.DB
+}
 
 var config Config
 
@@ -19,21 +23,13 @@ func Get() *Config {
 
 // Initialize project configuration
 func Init() {
-	viper.SetConfigName("config")
-	viper.SetConfigType("yaml")
-	viper.AddConfigPath("./")
+	config = Config{}
 
-	// Attempt to load config
-	if err := viper.ReadInConfig(); err != nil {
-		if _, ok := err.(*viper.ConfigFileNotFoundError); ok {
-			log.Fatal(err.Error())
-		}
+	dsn := fmt.Sprintf("host=%s user=%s password=%s dbname=%s port=5432 sslmode=disable connect_timeout=5 timezone=UTC", os.Getenv("POSTGRES_HOST"), os.Getenv("POSTGRES_USER"), os.Getenv("POSTGRES_PASSWORD"), os.Getenv("POSTGRES_DB"))
+	db, err := gorm.Open(postgres.Open(dsn), &gorm.Config{})
+	if err != nil {
+		log.Fatal(err)
 	}
 
-	viper.OnConfigChange(func(event fsnotify.Event) {
-		log.Println("Config file changed:", event.Name)
-	})
-
-	// Reload config if updated
-	viper.WatchConfig()
+	config.Postgres = db
 }

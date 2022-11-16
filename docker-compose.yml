@@ -2,7 +2,7 @@ version: '3'
 
 services:
   backend:
-    container_name: backend
+    container_name: blogga_backend
     build: ./backend
     # restart: always
     ports:
@@ -10,3 +10,22 @@ services:
     deploy:
       mode: replicated
       replicas: 1
+    depends_on:
+      - db
+    env_file: .env
+
+  db:
+    image: "postgres:14.0"
+    container_name: blogga_db
+    ports:
+      - "5434:5432"
+    restart: always
+    deploy:
+      mode: replicated
+      replicas: 1
+    env_file: .env
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
