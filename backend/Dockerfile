@@ -1,9 +1,13 @@
-FROM alpine:latest
+FROM python:3.9-alpine
 
 RUN mkdir /app
 
 WORKDIR /app
 
-COPY build/backendApp .
+COPY requirements.txt .
 
-CMD ./backendApp
+RUN pip install -r requirements.txt
+
+COPY . .
+
+CMD [ "python" "manage.py" "runserver" ]
