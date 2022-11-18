@@ -15,6 +15,7 @@ LOCAL_APPS = [
     "blogga.core",
     "blogga.users",
     "blogga.blog",
+    "blogga.api",
 ]
 
 THIRD_PARTY_APPS = [
