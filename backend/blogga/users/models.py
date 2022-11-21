@@ -25,8 +25,6 @@ class BloggaUser(AbstractBaseUser, PermissionsMixin, BaseModel):
             self.first_name = self.first_name.title()
         if not self.last_name.istitle():
             self.last_name = self.last_name.title()
-        if not self.occupation.istitle():
-            self.occupation = self.occupation.title()
 
         return super().save(*args, **kwargs)
 
