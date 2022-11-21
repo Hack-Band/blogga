@@ -16,6 +16,7 @@ LOCAL_APPS = [
     "blogga.users",
     "blogga.blog",
     "blogga.api",
+    "blogga.cms",
 ]
 
 THIRD_PARTY_APPS = [
@@ -113,4 +114,5 @@ STATIC_URL = "static/"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
+from config.blogga.cms import *  # noqa
 from config.blogga.users import *  # noqa
